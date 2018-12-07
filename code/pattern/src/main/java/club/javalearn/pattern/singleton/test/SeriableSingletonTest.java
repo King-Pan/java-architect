@@ -7,7 +7,7 @@ import java.io.*;
 /**
  * @author king-pan
  * @date 2018/12/6
- * @Description ${DESCRIPTION}
+ * @Description  单例模式在对象序列化后，不能保证唯一性
  */
 public class SeriableSingletonTest {
 

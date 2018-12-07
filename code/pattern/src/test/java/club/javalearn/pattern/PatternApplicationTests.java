@@ -11,6 +11,7 @@ public class PatternApplicationTests {
 
     @Test
     public void contextLoads() {
+
     }
 
 }

@@ -2,79 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2a819ccd-5217-449d-8a41-3b75e49113f2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__ch_qos_logback_logback_classic_1_2_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__ch_qos_logback_logback_core_1_2_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_jayway_jsonpath_json_path_2_4_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_vaadin_external_google_android_json_0_0_20131108_vaadin1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_annotation_javax_annotation_api_1_3_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_12.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_bytebuddy_byte_buddy_1_9_5.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_bytebuddy_byte_buddy_agent_1_9_5.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_minidev_accessors_smart_1_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_minidev_json_smart_2_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_logging_log4j_log4j_api_2_11_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_logging_log4j_log4j_to_slf4j_2_11_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_assertj_assertj_core_3_11_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_library_1_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mockito_mockito_core_2_23_4.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_objenesis_objenesis_2_6.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_ow2_asm_asm_5_0_4.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_skyscreamer_jsonassert_1_5_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_jul_to_slf4j_1_7_25.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_api_1_7_25.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_2_1_1_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_autoconfigure_2_1_1_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_2_1_1_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_logging_2_1_1_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_test_2_1_1_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_test_2_1_1_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_test_autoconfigure_2_1_1_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_aop_5_1_3_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_beans_5_1_3_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_5_1_3_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_core_5_1_3_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_expression_5_1_3_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jcl_5_1_3_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_test_5_1_3_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_xmlunit_xmlunit_core_2_6_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_yaml_snakeyaml_1_23.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/club/javalearn/pattern/factory/MenNiuMilk.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/club/javalearn/pattern/factory/Milk.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/club/javalearn/pattern/factory/SanLuMilk.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/club/javalearn/pattern/factory/Telunsu.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/club/javalearn/pattern/factory/YiLiMilk.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/club/javalearn/pattern/factory/absc/AbstractFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/club/javalearn/pattern/factory/absc/AbstractFactoryTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/club/javalearn/pattern/factory/absc/MilkFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/club/javalearn/pattern/factory/func/Factory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/club/javalearn/pattern/factory/func/FactoryTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/club/javalearn/pattern/factory/func/MenNiuFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/club/javalearn/pattern/factory/func/SanLuFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/club/javalearn/pattern/factory/func/TeLunSuFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/club/javalearn/pattern/factory/func/YiLiFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/club/javalearn/pattern/factory/simple/SimpleFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/club/javalearn/pattern/factory/simple/SimpleFactoryTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/club/javalearn/pattern/factory/simple/Test.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/club/javalearn/pattern/singleton/hungry/HungrySingleton.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/club/javalearn/pattern/singleton/lazy/LazySingleton.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/club/javalearn/pattern/singleton/lazy/LazySingleton2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/club/javalearn/pattern/singleton/lazy/LazySingleton3.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/club/javalearn/pattern/singleton/lazy/LazySingleton4.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/club/javalearn/pattern/singleton/register/RegisterEnum.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/club/javalearn/pattern/singleton/register/RegisterMap.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/club/javalearn/pattern/singleton/seriable/SeriableSingleton.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/club/javalearn/pattern/singleton/test/HungrySafeTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/club/javalearn/pattern/singleton/test/LazySaftTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/club/javalearn/pattern/singleton/test/LazySaftTest2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/club/javalearn/pattern/singleton/test/LazySaftTest3.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/club/javalearn/pattern/singleton/test/LazySaftTest4.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/club/javalearn/pattern/singleton/test/RegisterEnumTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/club/javalearn/pattern/singleton/test/SeriableSingletonTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_projectlombok_lombok_1_18_4.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/club/javalearn/pattern/prototype/simple/Prototype.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/club/javalearn/pattern/prototype/test/CloneTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/club/javalearn/pattern/Md5Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pattern.iml" beforeDir="false" afterPath="$PROJECT_DIR$/pattern.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/club/javalearn/pattern/singleton/test/SeriableSingletonTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/club/javalearn/pattern/singleton/test/SeriableSingletonTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/club/javalearn/pattern/PatternApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/club/javalearn/pattern/PatternApplicationTests.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -88,11 +24,13 @@
     <session id="436224445">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="2" />
+          <entry key="project.closed" value="3" />
+          <entry key="project.open.time.1" value="1" />
+          <entry key="project.open.time.11" value="1" />
           <entry key="project.open.time.15" value="1" />
           <entry key="project.open.time.19" value="1" />
           <entry key="project.open.time.6" value="1" />
-          <entry key="project.opened" value="3" />
+          <entry key="project.opened" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -100,30 +38,34 @@
           <entry key="DefaultListableBeanFactory" value="2" />
           <entry key="class" value="1" />
           <entry key="gitignore" value="1" />
-          <entry key="java" value="50" />
+          <entry key="java" value="54" />
           <entry key="mvnw" value="1" />
           <entry key="properties" value="1" />
           <entry key="uml" value="2" />
+          <entry key="xml" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CLASS" value="1" />
           <entry key="Git file" value="1" />
-          <entry key="JAVA" value="50" />
+          <entry key="JAVA" value="54" />
           <entry key="PLAIN_TEXT" value="1" />
           <entry key="Properties" value="1" />
           <entry key="UML" value="4" />
+          <entry key="XML" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="3057" />
+          <entry key="java" value="3411" />
+          <entry key="xml" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="3057" />
+          <entry key="JAVA" value="3411" />
+          <entry key="XML" value="5" />
         </counts>
       </usages-collector>
     </session>
@@ -131,28 +73,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/club/javalearn/pattern/singleton/test/LazySaftTest3.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/club/javalearn/pattern/prototype/simple/Prototype.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="292">
-              <caret line="31" column="60" lean-forward="true" selection-start-line="31" selection-start-column="60" selection-end-line="31" selection-end-column="60" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/club/javalearn/pattern/singleton/test/LazySaftTest4.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="383">
-              <caret line="30" column="5" lean-forward="true" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/club/javalearn/pattern/singleton/register/RegisterMap.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="212">
-              <caret line="25" column="46" selection-start-line="25" selection-start-column="35" selection-end-line="25" selection-end-column="46" />
+            <state relative-caret-position="342">
+              <caret line="21" column="10" selection-start-line="21" selection-start-column="10" selection-end-line="21" selection-end-column="10" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -161,79 +85,41 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/club/javalearn/pattern/singleton/register/RegisterEnum.java">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="589">
+              <caret line="31" column="30" selection-start-line="31" selection-start-column="30" selection-end-line="31" selection-end-column="30" />
+            </state>
+          </provider>
+          <provider editor-type-id="MavenHelperPluginDependencyAnalyzer" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/club/javalearn/pattern/prototype/test/CloneTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="133">
+              <caret line="7" column="40" selection-start-line="7" selection-start-column="40" selection-end-line="7" selection-end-column="40" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/club/javalearn/pattern/PatternApplicationTests.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="190">
-              <caret line="10" selection-start-line="10" selection-end-line="10" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/club/javalearn/pattern/singleton/test/RegisterEnumTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="228">
-              <caret line="12" column="44" selection-start-line="12" selection-start-column="44" selection-end-line="12" selection-end-column="44" />
-              <folding>
-                <element signature="e#266#267#0" expanded="true" />
-                <element signature="e#293#294#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/club/javalearn/pattern/singleton/seriable/SeriableSingleton.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="174">
-              <caret line="11" selection-start-line="11" selection-end-line="11" />
-              <folding>
-                <element signature="e#331#332#0" expanded="true" />
-                <element signature="e#355#356#0" expanded="true" />
-              </folding>
+              <caret line="13" selection-start-line="13" selection-end-line="13" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/club/javalearn/pattern/singleton/test/SeriableSingletonTest.java">
+        <entry file="file://$PROJECT_DIR$/src/test/java/club/javalearn/pattern/Md5Test.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="383">
-              <caret line="30" column="24" selection-start-line="30" selection-start-column="24" selection-end-line="30" selection-end-column="24" />
+            <state relative-caret-position="501">
+              <caret line="35" column="5" lean-forward="true" selection-start-line="33" selection-start-column="4" selection-end-line="35" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/club/javalearn/pattern/singleton/lazy/LazySingleton2.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="266">
-              <caret line="14" column="44" lean-forward="true" selection-start-line="14" selection-start-column="44" selection-end-line="14" selection-end-column="44" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/club/javalearn/pattern/singleton/lazy/LazySingleton3.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="228">
-              <caret line="15" column="29" selection-start-line="15" selection-start-column="29" selection-end-line="15" selection-end-column="29" />
-              <folding>
-                <element signature="e#622#623#0" expanded="true" />
-                <element signature="e#673#674#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/club/javalearn/pattern/singleton/lazy/LazySingleton4.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="140">
-              <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -288,6 +174,11 @@
         <option value="$PROJECT_DIR$/src/main/java/club/javalearn/pattern/singleton/test/RegisterEnumTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/club/javalearn/pattern/singleton/seriable/SeriableSingleton.java" />
         <option value="$PROJECT_DIR$/src/main/java/club/javalearn/pattern/singleton/test/SeriableSingletonTest.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/club/javalearn/pattern/prototype/simple/Prototype.java" />
+        <option value="$PROJECT_DIR$/src/main/java/club/javalearn/pattern/prototype/test/CloneTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/club/javalearn/pattern/PatternApplicationTests.java" />
+        <option value="$PROJECT_DIR$/src/test/java/club/javalearn/pattern/Md5Test.java" />
       </list>
     </option>
   </component>
@@ -303,10 +194,15 @@
         <option name="mavenHome" value="C:/Program Files/maven" />
       </MavenGeneralSettings>
     </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="-10" />
-    <option name="y" value="-10" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="85" />
+    <option name="y" value="25" />
     <option name="width" value="1750" />
     <option name="height" value="970" />
   </component>
@@ -380,7 +276,7 @@
               <item name="club" type="462c0819:PsiDirectoryNode" />
               <item name="javalearn" type="462c0819:PsiDirectoryNode" />
               <item name="pattern" type="462c0819:PsiDirectoryNode" />
-              <item name="singleton" type="462c0819:PsiDirectoryNode" />
+              <item name="prototype" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="pattern" type="b2602c69:ProjectViewProjectNode" />
@@ -391,8 +287,8 @@
               <item name="club" type="462c0819:PsiDirectoryNode" />
               <item name="javalearn" type="462c0819:PsiDirectoryNode" />
               <item name="pattern" type="462c0819:PsiDirectoryNode" />
-              <item name="singleton" type="462c0819:PsiDirectoryNode" />
-              <item name="seriable" type="462c0819:PsiDirectoryNode" />
+              <item name="prototype" type="462c0819:PsiDirectoryNode" />
+              <item name="simple" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="pattern" type="b2602c69:ProjectViewProjectNode" />
@@ -403,9 +299,9 @@
               <item name="club" type="462c0819:PsiDirectoryNode" />
               <item name="javalearn" type="462c0819:PsiDirectoryNode" />
               <item name="pattern" type="462c0819:PsiDirectoryNode" />
-              <item name="singleton" type="462c0819:PsiDirectoryNode" />
-              <item name="seriable" type="462c0819:PsiDirectoryNode" />
-              <item name="SeriableSingleton" type="1a9f42e2:ClassTreeNode" />
+              <item name="prototype" type="462c0819:PsiDirectoryNode" />
+              <item name="simple" type="462c0819:PsiDirectoryNode" />
+              <item name="Prototype" type="1a9f42e2:ClassTreeNode" />
             </path>
             <path>
               <item name="pattern" type="b2602c69:ProjectViewProjectNode" />
@@ -416,7 +312,7 @@
               <item name="club" type="462c0819:PsiDirectoryNode" />
               <item name="javalearn" type="462c0819:PsiDirectoryNode" />
               <item name="pattern" type="462c0819:PsiDirectoryNode" />
-              <item name="singleton" type="462c0819:PsiDirectoryNode" />
+              <item name="prototype" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -428,162 +324,53 @@
               <item name="club" type="462c0819:PsiDirectoryNode" />
               <item name="javalearn" type="462c0819:PsiDirectoryNode" />
               <item name="pattern" type="462c0819:PsiDirectoryNode" />
-              <item name="singleton" type="462c0819:PsiDirectoryNode" />
+              <item name="prototype" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="SeriableSingletonTest" type="1a9f42e2:ClassTreeNode" />
+              <item name="CloneTest" type="1a9f42e2:ClassTreeNode" />
             </path>
             <path>
               <item name="pattern" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="pattern" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="pattern" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="&lt; 1.8 &gt;" type="70bed36:NamedLibraryElementNode" />
-            </path>
-            <path>
-              <item name="pattern" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="&lt; 1.8 &gt;" type="70bed36:NamedLibraryElementNode" />
-              <item name="rt.jar" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="pattern" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="&lt; 1.8 &gt;" type="70bed36:NamedLibraryElementNode" />
-              <item name="rt.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="pattern" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="pattern" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="&lt; 1.8 &gt;" type="70bed36:NamedLibraryElementNode" />
-              <item name="rt.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="pattern" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="lang" type="462c0819:PsiDirectoryNode" />
+              <item name="club" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="pattern" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="&lt; 1.8 &gt;" type="70bed36:NamedLibraryElementNode" />
-              <item name="rt.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="pattern" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="lang" type="462c0819:PsiDirectoryNode" />
-              <item name="reflect" type="462c0819:PsiDirectoryNode" />
+              <item name="club" type="462c0819:PsiDirectoryNode" />
+              <item name="javalearn" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="pattern" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="&lt; 1.8 &gt;" type="70bed36:NamedLibraryElementNode" />
-              <item name="rt.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="pattern" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="lang" type="462c0819:PsiDirectoryNode" />
-              <item name="reflect" type="462c0819:PsiDirectoryNode" />
-              <item name="Constructor" type="1a9f42e2:ClassTreeNode" />
+              <item name="club" type="462c0819:PsiDirectoryNode" />
+              <item name="javalearn" type="462c0819:PsiDirectoryNode" />
+              <item name="pattern" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="pattern" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="&lt; 1.8 &gt;" type="70bed36:NamedLibraryElementNode" />
-              <item name="rt.jar" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="util" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="pattern" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="&lt; 1.8 &gt;" type="70bed36:NamedLibraryElementNode" />
-              <item name="rt.jar" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="util" type="462c0819:PsiDirectoryNode" />
-              <item name="concurrent" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="pattern" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="&lt; 1.8 &gt;" type="70bed36:NamedLibraryElementNode" />
-              <item name="rt.jar" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="util" type="462c0819:PsiDirectoryNode" />
-              <item name="concurrent" type="462c0819:PsiDirectoryNode" />
-              <item name="locks" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="pattern" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="&lt; 1.8 &gt;" type="70bed36:NamedLibraryElementNode" />
-              <item name="rt.jar" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="util" type="462c0819:PsiDirectoryNode" />
-              <item name="concurrent" type="462c0819:PsiDirectoryNode" />
-              <item name="locks" type="462c0819:PsiDirectoryNode" />
-              <item name="AbstractQueuedSynchronizer" type="1a9f42e2:ClassTreeNode" />
-            </path>
-            <path>
-              <item name="pattern" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="&lt; 1.8 &gt;" type="70bed36:NamedLibraryElementNode" />
-              <item name="rt.jar" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="util" type="462c0819:PsiDirectoryNode" />
-              <item name="concurrent" type="462c0819:PsiDirectoryNode" />
-              <item name="CountDownLatch" type="1a9f42e2:ClassTreeNode" />
-            </path>
-            <path>
-              <item name="pattern" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Maven: org.springframework:spring-beans:5.1.3.RELEASE" type="70bed36:NamedLibraryElementNode" />
-            </path>
-            <path>
-              <item name="pattern" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Maven: org.springframework:spring-beans:5.1.3.RELEASE" type="70bed36:NamedLibraryElementNode" />
-              <item name="spring-beans-5.1.3.RELEASE.jar" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="pattern" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Maven: org.springframework:spring-beans:5.1.3.RELEASE" type="70bed36:NamedLibraryElementNode" />
-              <item name="spring-beans-5.1.3.RELEASE.jar" type="462c0819:PsiDirectoryNode" />
-              <item name="org" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="pattern" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Maven: org.springframework:spring-beans:5.1.3.RELEASE" type="70bed36:NamedLibraryElementNode" />
-              <item name="spring-beans-5.1.3.RELEASE.jar" type="462c0819:PsiDirectoryNode" />
-              <item name="org" type="462c0819:PsiDirectoryNode" />
-              <item name="springframework" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="pattern" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Maven: org.springframework:spring-beans:5.1.3.RELEASE" type="70bed36:NamedLibraryElementNode" />
-              <item name="spring-beans-5.1.3.RELEASE.jar" type="462c0819:PsiDirectoryNode" />
-              <item name="org" type="462c0819:PsiDirectoryNode" />
-              <item name="springframework" type="462c0819:PsiDirectoryNode" />
-              <item name="beans" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="pattern" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Maven: org.springframework:spring-beans:5.1.3.RELEASE" type="70bed36:NamedLibraryElementNode" />
-              <item name="spring-beans-5.1.3.RELEASE.jar" type="462c0819:PsiDirectoryNode" />
-              <item name="org" type="462c0819:PsiDirectoryNode" />
-              <item name="springframework" type="462c0819:PsiDirectoryNode" />
-              <item name="beans" type="462c0819:PsiDirectoryNode" />
-              <item name="factory" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="pattern" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Maven: org.springframework:spring-beans:5.1.3.RELEASE" type="70bed36:NamedLibraryElementNode" />
-              <item name="spring-beans-5.1.3.RELEASE.jar" type="462c0819:PsiDirectoryNode" />
-              <item name="org" type="462c0819:PsiDirectoryNode" />
-              <item name="springframework" type="462c0819:PsiDirectoryNode" />
-              <item name="beans" type="462c0819:PsiDirectoryNode" />
-              <item name="factory" type="462c0819:PsiDirectoryNode" />
-              <item name="ListableBeanFactory" type="1a9f42e2:ClassTreeNode" />
             </path>
           </expand>
           <select />
@@ -597,7 +384,7 @@
     <property name="SearchEverywhereHistoryKey" value="DefaultLis&#9;FILE&#9;jar://C:/Users/pansf/.m2/repository/org/springframework/spring-beans/5.1.3.RELEASE/spring-beans-5.1.3.RELEASE-sources.jar!/org/springframework/beans/factory/support/DefaultListableBeanFactory.java&#10;BeanFac&#9;PSI&#9;JAVA://org.springframework.beans.factory.BeanFactory" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544089927856" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544171132966" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/club/javalearn/pattern/factory/DefaultListableBeanFactory.uml" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -621,26 +408,13 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.SeriableSingletonTest">
-    <configuration name="LazySaftTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="club.javalearn.pattern.singleton.test.LazySaftTest" />
+  <component name="RunManager" selected="JUnit.Md5Test.test">
+    <configuration name="CloneTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="club.javalearn.pattern.prototype.test.CloneTest" />
       <module name="pattern" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="club.javalearn.pattern.singleton.test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="LazySaftTest2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="club.javalearn.pattern.singleton.test.LazySaftTest2" />
-      <module name="pattern" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="club.javalearn.pattern.singleton.test.*" />
+          <option name="PATTERN" value="club.javalearn.pattern.prototype.test.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -687,6 +461,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Md5Test.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="pattern" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="club.javalearn.pattern.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="club.javalearn.pattern" />
+      <option name="MAIN_CLASS_NAME" value="club.javalearn.pattern.Md5Test" />
+      <option name="METHOD_NAME" value="test" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="PatternApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="pattern" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="club.javalearn.pattern.PatternApplication" />
@@ -696,19 +486,19 @@
     </configuration>
     <list>
       <item itemvalue="Spring Boot.PatternApplication" />
-      <item itemvalue="Application.LazySaftTest" />
-      <item itemvalue="Application.LazySaftTest2" />
       <item itemvalue="Application.LazySaftTest3" />
       <item itemvalue="Application.LazySaftTest4" />
       <item itemvalue="Application.SeriableSingletonTest" />
+      <item itemvalue="Application.CloneTest" />
+      <item itemvalue="JUnit.Md5Test.test" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.Md5Test.test" />
+        <item itemvalue="Application.CloneTest" />
         <item itemvalue="Application.SeriableSingletonTest" />
         <item itemvalue="Application.LazySaftTest4" />
         <item itemvalue="Application.LazySaftTest3" />
-        <item itemvalue="Application.LazySaftTest2" />
-        <item itemvalue="Application.LazySaftTest" />
       </list>
     </recent_temporary>
   </component>
@@ -724,19 +514,26 @@
       <updated>1544068691728</updated>
       <workItem from="1544068696501" duration="4508000" />
       <workItem from="1544074813801" duration="9004000" />
-      <workItem from="1544086366933" duration="3422000" />
+      <workItem from="1544086366933" duration="5292000" />
+      <workItem from="1544153045672" duration="3625000" />
+      <workItem from="1544172867639" duration="822000" />
     </task>
     <servers />
   </component>
+  <component name="TestHistory">
+    <history-entry file="Md5Test_test - 2018.12.07 at 15h 13m 02s.xml">
+      <configuration name="Md5Test.test" configurationId="JUnit" />
+    </history-entry>
+  </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16934000" />
+    <option name="totallyTimeSpent" value="23251000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4957806" visible="true" weight="0.23123324" />
-      <window_info id="Structure" order="1" sideWeight="0.5042194" side_tool="true" visible="true" weight="0.23123324" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49291784" visible="true" weight="0.23793566" />
+      <window_info id="Structure" order="1" sideWeight="0.50708216" side_tool="true" visible="true" weight="0.23793566" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
       <window_info id="UI Designer" order="4" />
@@ -744,7 +541,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3286119" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3286119" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39943343" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -797,7 +594,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/mvnw" />
     <entry file="file://$PROJECT_DIR$/.gitignore" />
     <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
       <provider selected="true" editor-type-id="text-editor" />
@@ -1471,10 +1267,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="140">
           <caret line="229" column="16" selection-start-line="229" selection-start-column="16" selection-end-line="229" selection-end-column="16" />
-          <folding>
-            <element signature="e#9899#9900#0" expanded="true" />
-            <element signature="e#9936#9937#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1482,9 +1274,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="760">
           <caret line="116" column="16" selection-start-line="116" selection-start-column="13" selection-end-line="116" selection-end-column="39" />
-          <folding>
-            <element signature="e#0#74083#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1543,21 +1332,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/club/javalearn/pattern/singleton/lazy/LazySingleton2.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="14" column="44" lean-forward="true" selection-start-line="14" selection-start-column="44" selection-end-line="14" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/club/javalearn/pattern/singleton/lazy/LazySingleton3.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="228">
           <caret line="15" column="29" selection-start-line="15" selection-start-column="29" selection-end-line="15" selection-end-column="29" />
-          <folding>
-            <element signature="e#622#623#0" expanded="true" />
-            <element signature="e#673#674#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1593,9 +1371,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="212">
           <caret line="25" column="46" selection-start-line="25" selection-start-column="35" selection-end-line="25" selection-end-column="46" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1606,32 +1381,70 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/club/javalearn/pattern/singleton/test/RegisterEnumTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="12" column="44" selection-start-line="12" selection-start-column="44" selection-end-line="12" selection-end-column="44" />
-          <folding>
-            <element signature="e#266#267#0" expanded="true" />
-            <element signature="e#293#294#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/club/javalearn/pattern/singleton/seriable/SeriableSingleton.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="174">
           <caret line="11" selection-start-line="11" selection-end-line="11" />
-          <folding>
-            <element signature="e#331#332#0" expanded="true" />
-            <element signature="e#355#356#0" expanded="true" />
-          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/club/javalearn/pattern/singleton/test/RegisterEnumTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="12" column="44" selection-start-line="12" selection-start-column="44" selection-end-line="12" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/club/javalearn/pattern/singleton/lazy/LazySingleton2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="14" column="44" lean-forward="true" selection-start-line="14" selection-start-column="44" selection-end-line="14" selection-end-column="44" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/club/javalearn/pattern/singleton/test/SeriableSingletonTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="383">
-          <caret line="30" column="24" selection-start-line="30" selection-start-column="24" selection-end-line="30" selection-end-column="24" />
+        <state relative-caret-position="703">
+          <caret line="37" column="5" lean-forward="true" selection-start-line="37" selection-start-column="5" selection-end-line="37" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/club/javalearn/pattern/prototype/simple/Prototype.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="21" column="10" selection-start-line="21" selection-start-column="10" selection-end-line="21" selection-end-column="10" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="589">
+          <caret line="31" column="30" selection-start-line="31" selection-start-column="30" selection-end-line="31" selection-end-column="30" />
+        </state>
+      </provider>
+      <provider editor-type-id="MavenHelperPluginDependencyAnalyzer" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/club/javalearn/pattern/prototype/test/CloneTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="7" column="40" selection-start-line="7" selection-start-column="40" selection-end-line="7" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/club/javalearn/pattern/PatternApplicationTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="13" selection-start-line="13" selection-end-line="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/club/javalearn/pattern/Md5Test.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="501">
+          <caret line="35" column="5" lean-forward="true" selection-start-line="33" selection-start-column="4" selection-end-line="35" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
