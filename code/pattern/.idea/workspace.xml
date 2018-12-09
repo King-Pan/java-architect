@@ -2,15 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2a819ccd-5217-449d-8a41-3b75e49113f2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_projectlombok_lombok_1_18_4.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/club/javalearn/pattern/prototype/simple/Prototype.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/club/javalearn/pattern/prototype/test/CloneTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/club/javalearn/pattern/Md5Test.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pattern.iml" beforeDir="false" afterPath="$PROJECT_DIR$/pattern.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/club/javalearn/pattern/singleton/test/SeriableSingletonTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/club/javalearn/pattern/singleton/test/SeriableSingletonTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/club/javalearn/pattern/PatternApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/club/javalearn/pattern/PatternApplicationTests.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -24,7 +16,7 @@
     <session id="436224445">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="3" />
+          <entry key="project.closed" value="4" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.11" value="1" />
           <entry key="project.open.time.15" value="1" />
@@ -59,12 +51,14 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="java" value="3411" />
+          <entry key="txt" value="8" />
           <entry key="xml" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="JAVA" value="3411" />
+          <entry key="PLAIN_TEXT" value="8" />
           <entry key="XML" value="5" />
         </counts>
       </usages-collector>
@@ -200,7 +194,7 @@
       </MavenImportingSettings>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="85" />
     <option name="y" value="25" />
     <option name="width" value="1750" />
@@ -516,8 +510,16 @@
       <workItem from="1544074813801" duration="9004000" />
       <workItem from="1544086366933" duration="5292000" />
       <workItem from="1544153045672" duration="3625000" />
-      <workItem from="1544172867639" duration="822000" />
+      <workItem from="1544172867639" duration="1458000" />
     </task>
+    <task id="LOCAL-00001" summary="原型设计模式">
+      <created>1544176385144</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1544176385144</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -526,7 +528,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23251000" />
+    <option name="totallyTimeSpent" value="23887000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -568,6 +570,10 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="原型设计模式" />
+    <option name="LAST_COMMIT_MESSAGE" value="原型设计模式" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
