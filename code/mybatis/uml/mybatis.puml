@@ -1,0 +1,15 @@
+@startuml
+title 对象关系图
+scale 1.5
+
+/'组合关系'/
+class Human{
+     - Head head;
+     - Heart mHeart;
+}
+Human *-up- Head : contains >
+Human *-up- Heart : contains >
+
+
+
+   @enduml

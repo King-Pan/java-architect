@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>org.apache.ibatis.logging.jdbc.BaseJdbcLogger</OriginalElement>
+  <nodes>
+    <node x="263.0" y="369.0">org.apache.ibatis.logging.jdbc.StatementLogger</node>
+    <node x="331.75" y="81.0">org.apache.ibatis.logging.jdbc.BaseJdbcLogger</node>
+    <node x="694.0" y="323.0">org.apache.ibatis.logging.jdbc.ResultSetLogger</node>
+    <node x="472.0" y="369.0">org.apache.ibatis.logging.jdbc.ConnectionLogger</node>
+    <node x="430.25" y="0.0">org.apache.ibatis.logging.Log</node>
+    <node x="0.0" y="369.0">org.apache.ibatis.logging.jdbc.PreparedStatementLogger</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="org.apache.ibatis.logging.jdbc.StatementLogger" target="org.apache.ibatis.logging.jdbc.BaseJdbcLogger">
+      <point x="0.0" y="-27.0" />
+      <point x="357.5" y="303.0" />
+      <point x="431.875" y="303.0" />
+      <point x="-33.375" y="96.0" />
+    </edge>
+    <edge source="org.apache.ibatis.logging.jdbc.ResultSetLogger" target="org.apache.ibatis.logging.jdbc.BaseJdbcLogger">
+      <point x="0.0" y="-73.0" />
+      <point x="807.0" y="293.0" />
+      <point x="565.375" y="293.0" />
+      <point x="100.125" y="96.0" />
+    </edge>
+    <edge source="org.apache.ibatis.logging.jdbc.ConnectionLogger" target="org.apache.ibatis.logging.jdbc.BaseJdbcLogger">
+      <point x="0.0" y="-27.0" />
+      <point x="573.0" y="303.0" />
+      <point x="498.625" y="303.0" />
+      <point x="33.375" y="96.0" />
+    </edge>
+    <edge source="org.apache.ibatis.logging.jdbc.PreparedStatementLogger" target="org.apache.ibatis.logging.jdbc.BaseJdbcLogger">
+      <point x="0.0" y="-27.0" />
+      <point x="121.5" y="293.0" />
+      <point x="365.125" y="293.0" />
+      <point x="-100.125" y="96.0" />
+    </edge>
+    <edge source="org.apache.ibatis.logging.jdbc.BaseJdbcLogger" target="org.apache.ibatis.logging.Log">
+      <point x="0.0" y="-96.0" />
+      <point x="0.0" y="15.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="460.0" y="232.0" />
+  <SelectedNodes>
+    <node>org.apache.ibatis.logging.jdbc.StatementLogger</node>
+    <node>org.apache.ibatis.logging.jdbc.BaseJdbcLogger</node>
+    <node>org.apache.ibatis.logging.jdbc.ResultSetLogger</node>
+    <node>org.apache.ibatis.logging.jdbc.ConnectionLogger</node>
+    <node>org.apache.ibatis.logging.Log</node>
+    <node>org.apache.ibatis.logging.jdbc.PreparedStatementLogger</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Fields</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

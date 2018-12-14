@@ -47,3 +47,12 @@ select * from user lock in share mood;
 
 
 ![](./images/mysql-lock.png)
+
+
+
+## 执行计划
+
+
+
+![1544606327773](./images/exctor-plan.png)
+
