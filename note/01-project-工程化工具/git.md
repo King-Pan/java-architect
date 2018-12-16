@@ -63,3 +63,28 @@ git rebase --skip  # 中间遇到某个补丁不需要应用，可以用下面�
 git rebase --abort # 回到rebase执行之前的状态
 ```
 
+
+
+
+
+
+
+![31ECC840-1BB7-4F30-B5A1-74E71D91E821](/Users/king-pan/Library/Containers/com.tencent.qq/Data/Library/Application Support/QQ/Users/467449165/QQ/Temp.db/31ECC840-1BB7-4F30-B5A1-74E71D91E821.png)
+
+
+
+
+
+![image-20181215212838074](/var/folders/h3/56gbqwld6hj26qv2vx1q7knc0000gn/T/abnerworks.Typora/image-20181215212838074.png)
+
+
+
+
+
+![image-20181215213243818](/var/folders/h3/56gbqwld6hj26qv2vx1q7knc0000gn/T/abnerworks.Typora/image-20181215213243818.png)
+
+
+
+
+
+![image-20181215213446498](./images/image-20181215213446498.png)
