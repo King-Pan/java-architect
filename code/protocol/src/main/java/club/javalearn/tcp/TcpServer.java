@@ -19,13 +19,12 @@ public class TcpServer {
         BufferedReader bufferedReader = null;
         try {
             sc = new ServerSocket(2500);
-            //等待客户端连接
-            Socket socket = sc.accept();
-
-            bufferedReader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-
-            System.out.println(bufferedReader.readLine());
-
+            while (true) {
+                //等待客户端连接
+                Socket socket = sc.accept();
+                bufferedReader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+                System.out.println(bufferedReader.readLine());
+            }
         } catch (IOException e) {
             e.printStackTrace();
         } finally {
@@ -40,7 +39,5 @@ public class TcpServer {
                 e.printStackTrace();
             }
         }
-
-
     }
 }

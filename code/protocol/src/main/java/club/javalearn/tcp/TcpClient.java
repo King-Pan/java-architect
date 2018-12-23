@@ -10,13 +10,28 @@ import java.net.Socket;
  * @Description TCP客户端
  */
 public class TcpClient {
+
+
     public static void main(String[] args) {
+        Socket socket = null;
+        PrintWriter printWriter = null;
         try {
-            Socket socket = new Socket("127.0.0.1", 2500);
-            PrintWriter printWriter = new PrintWriter(socket.getOutputStream(), true);
+            socket = new Socket("127.0.0.1", 2500);
+            printWriter = new PrintWriter(socket.getOutputStream(), true);
             printWriter.println("Hello");
         } catch (IOException e) {
             e.printStackTrace();
+        } finally {
+            try {
+                if (socket != null) {
+                    socket.close();
+                }
+                if (printWriter != null) {
+                    printWriter.close();
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
 
     }
