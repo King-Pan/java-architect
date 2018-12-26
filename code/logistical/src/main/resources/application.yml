@@ -1,0 +1,82 @@
+spring:
+  quartz:
+    job-store-type: jdbc
+    #jdbc:
+    # initialize-schema: always
+    #schema: classpath:tables_mysql.sql
+    properties:
+      org:
+        quartz:
+          scheduler:
+            instanceId: AUTO
+          jobStore:
+            class: org.quartz.impl.jdbcjobstore.JobStoreTX #持久化配置
+            driverDelegateClass: org.quartz.impl.jdbcjobstore.StdJDBCDelegate #我们仅为数据库制作了特定于数据库的代理
+            useProperties: true #以指示JDBCJobStore将JobDataMaps中的所有值都作为字符串，因此可以作为名称 - 值对存储而不是在BLOB列中以其序列化形式存储更多复杂的对象。从长远来看，这是更安全的，因为您避免了将非String类序列化为BLOB的类版本问题。
+            tablePrefix: qrtz_  #数据库表前缀
+            misfireThreshold: 60000 #在被认为“失火”之前，调度程序将“容忍”一个Triggers将其下一个启动时间通过的毫秒数。默认值（如果您在配置中未输入此属性）为60000（60秒）。
+            clusterCheckinInterval: 5000 #设置此实例“检入”*与群集的其他实例的频率（以毫秒为单位）。影响检测失败实例的速度。
+            isClustered: true #打开群集功能
+          threadPool: #连接池
+            class: org.quartz.simpl.SimpleThreadPool
+            threadCount: 10
+            threadPriority: 5
+            threadsInheritContextClassLoaderOfInitializingThread: true
+  thymeleaf:
+    mode:
+      LEGACYHTML5
+    check-template:
+      false
+    cache: false
+  datasource:
+    # schema: classpath:tables-mysql.sql
+    #    url: jdbc:mysql://10.31.100.157:3306/mg?useUnicode=true&characterEncoding=utf-8&useSSL=false
+    #    username: hbwork
+    #    password: Hbwork157%%
+    #url: jdbc:mysql://47.92.72.146:3306/mg?useUnicode=true&characterEncoding=utf-8&useSSL=false
+    url: jdbc:mysql://localhost:3306/logistical?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=UTC
+    username: root
+    password: 123456
+    hikari:
+      auto-commit: false
+      minimum-idle: 5
+      maximum-pool-size: 20
+      idle-timeout: 30000
+      pool-name: DatebookHikariCP
+      max-lifetime: 1800000
+      connection-timeout: 30000
+      connection-test-query: select 1
+    # 合并多个DruidDataSource的监控数据
+    #useGlobalDataSourceStat: true
+  jpa:
+    hibernate:
+      ddl-auto: update
+      naming:
+        strategy: org.hibernate.cfg.ImprovedNamingStrategy
+    show-sql: true
+    format-sql: true
+    properties:
+      hibernate:
+        dialect:
+          org.hibernate.dialect.MySQL5InnoDBDialect
+        enable_lazy_load_no_trans: true
+    open-in-view: true
+  profiles:
+    active: dev
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    joda-date-time-format: yyyy-MM-dd HH:mm:ss
+server:
+  port: 9000
+  servlet:
+    context-path: /smart
+
+boss:
+  password: a264a295e1f58099
+
+task:
+  hour:
+    send-cron: 0 50 * * * *  # 每小时的第50分钟执行 前2个小时未发送的消息例如: 20181212105000 发送 2018121208 该小时段的消息
+    check-cron: 0 50 * * * * # 每小时的第50分钟执行 前5个小时的遗漏未发送的消息 例如: 20181212105000 检查 2018121203 - 2018121207未发送的消息
+  day:
+    check-cron: 0 30 23 ? * *  # 每天的23：30 执行，检查上一天未发送的消息
