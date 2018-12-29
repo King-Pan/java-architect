@@ -157,7 +157,7 @@ public static void main(String[] args) {
 
 ​	因为服务端是IO阻塞的，也就是说服务端在同一时间内只能为一个客户端服务，我们继续改进,在while(true)中，每获取一个客户端连接，我们创建一个线程来处理这个Socket请求。这儿我们解决了服务端IO阻塞只能解决一个客户端问题，但是客户端多了以后，我们可能同时创建上万，十万，百万个线程来处理客户端请求，这样就会带来新的问题，服务器可能撑不住。这里我们可以不使用BIO,使用NIO来解决这个问题。
 
-![image-20181222231601727](/Users/king-pan/Documents/GitHub/java-architect/note/07-java分布式架构/images/tcp-sxt-thread.png)
+![image-20181222231601727](./images/tcp-sxt-thread.png)
 
 ### 4.4 非阻塞IO    NIO
 
