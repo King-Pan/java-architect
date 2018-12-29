@@ -3,13 +3,14 @@
   <ID>JAVA</ID>
   <OriginalElement>club.javalearn.rmiserver.HelloServiceImpl</OriginalElement>
   <nodes>
-    <node x="167.75" y="0.0">java.rmi.Remote</node>
-    <node x="23.75" y="162.0">java.rmi.server.RemoteServer</node>
-    <node x="1.75" y="243.0">java.rmi.server.UnicastRemoteObject</node>
-    <node x="23.25" y="81.0">java.rmi.server.RemoteObject</node>
-    <node x="176.25" y="81.0">club.javalearn.rmiserver.IHelloService</node>
-    <node x="0.0" y="0.0">java.io.Serializable</node>
-    <node x="90.50000000000001" y="324.0">club.javalearn.rmiserver.HelloServiceImpl</node>
+    <node x="72.62500000000001" y="0.0">java.rmi.Remote</node>
+    <node x="144.5" y="162.0">java.rmi.server.RemoteServer</node>
+    <node x="297.0" y="81.0">java.rmi.server.RemoteRef</node>
+    <node x="122.50000000000001" y="243.0">java.rmi.server.UnicastRemoteObject</node>
+    <node x="144.0" y="81.0">java.rmi.server.RemoteObject</node>
+    <node x="0.0" y="81.0">club.javalearn.rmiserver.IHelloService</node>
+    <node x="242.125" y="0.0">java.io.Serializable</node>
+    <node x="62.750000000000014" y="324.0">club.javalearn.rmiserver.HelloServiceImpl</node>
   </nodes>
   <notes />
   <edges>
@@ -19,37 +20,49 @@
     </edge>
     <edge source="club.javalearn.rmiserver.IHelloService" target="java.rmi.Remote">
       <point x="0.0" y="-15.5" />
-      <point x="23.5" y="15.5" />
+      <point x="62.0" y="56.0" />
+      <point x="96.12500000000001" y="56.0" />
+      <point x="-23.5" y="15.5" />
     </edge>
     <edge source="club.javalearn.rmiserver.HelloServiceImpl" target="java.rmi.server.UnicastRemoteObject">
-      <point x="-36.75" y="-15.5" />
-      <point x="127.25000000000001" y="299.0" />
-      <point x="89.75" y="299.0" />
+      <point x="36.75" y="-15.5" />
+      <point x="173.0" y="299.0" />
+      <point x="210.5" y="299.0" />
       <point x="0.0" y="15.5" />
     </edge>
     <edge source="java.rmi.server.RemoteObject" target="java.rmi.Remote">
-      <point x="33.25" y="-15.5" />
-      <point x="123.0" y="56.0" />
-      <point x="191.25" y="56.0" />
-      <point x="-23.5" y="15.5" />
+      <point x="-33.25" y="-15.5" />
+      <point x="177.25" y="56.0" />
+      <point x="143.125" y="56.0" />
+      <point x="23.5" y="15.5" />
+    </edge>
+    <edge source="java.rmi.server.RemoteRef" target="java.io.Serializable">
+      <point x="0.0" y="-15.5" />
+      <point x="353.5" y="56.0" />
+      <point x="326.875" y="56.0" />
+      <point x="28.25" y="15.5" />
     </edge>
     <edge source="java.rmi.server.RemoteServer" target="java.rmi.server.RemoteObject">
       <point x="0.0" y="-15.5" />
       <point x="0.0" y="15.5" />
     </edge>
     <edge source="java.rmi.server.RemoteObject" target="java.io.Serializable">
-      <point x="-33.25" y="-15.5" />
-      <point x="0.0" y="15.5" />
+      <point x="33.25" y="-15.5" />
+      <point x="243.75" y="56.0" />
+      <point x="270.375" y="56.0" />
+      <point x="-28.25" y="15.5" />
     </edge>
     <edge source="club.javalearn.rmiserver.HelloServiceImpl" target="club.javalearn.rmiserver.IHelloService">
-      <point x="36.75" y="-15.5" />
-      <point x="200.75" y="299.0" />
-      <point x="238.25" y="299.0" />
+      <point x="-36.75" y="-15.5" />
+      <point x="99.50000000000001" y="299.0" />
+      <point x="62.000000000000014" y="299.0" />
       <point x="0.0" y="15.5" />
     </edge>
   </edges>
-  <settings layout="Hierarchic Group" zoom="1.0" x="150.5" y="238.5" />
-  <SelectedNodes />
+  <settings layout="Hierarchic Group" zoom="1.0" x="151.0" y="239.0" />
+  <SelectedNodes>
+    <node>java.rmi.server.RemoteRef</node>
+  </SelectedNodes>
   <Categories />
   <SCOPE>All</SCOPE>
   <VISIBILITY>private</VISIBILITY>

@@ -146,6 +146,10 @@ public class ClientDemo {
 
 
 
+![1546048668889](./images/1546048668889.png)
+
+
+
 sun.rmi.server.UnicastServerRef#exportObject(java.rmi.Remote, java.lang.Object, boolean)
 
 
@@ -174,6 +178,12 @@ sun.rmi.server.UnicastServerRef#exportObject(java.rmi.Remote, java.lang.Object, 
 ```
 
 > 服务端启动Registry
+
+```java
+
+```
+
+
 
 ## 实现自己的RPC框架
 
