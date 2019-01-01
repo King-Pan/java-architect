@@ -324,3 +324,122 @@ ZAB 协议包含两种基本模式，分别是
 
   	**leader 的投票过程，不需要 Observer 的 ack，也就是Observer 不需要参与投票过程，但是 Observer 必须要同步 Leader 的数据从而在处理请求的时候保证数据的一致性**
 
+
+
+
+
+## Zookeeper的Leader选举
+
+#### Leader选举源码分析
+
+> 入口类QuorumPeerMain
+
+**判断是否是集群模式**
+
+```java
+public static void main(String[] args) {
+    QuorumPeerMain main = new QuorumPeerMain();
+    try {
+        main.initializeAndRun(args);
+    } catch (Exception e) {
+        // ...
+    }
+    LOG.info("Exiting normally");
+    System.exit(ExitCode.EXECUTION_FINISHED.getValue());
+}
+
+ protected void initializeAndRun(String[] args)
+     throws ConfigException, IOException, AdminServerException
+    {
+        QuorumPeerConfig config = new QuorumPeerConfig();
+        if (args.length == 1) {
+            config.parse(args[0]);
+        }
+
+        // Start and schedule the the purge task
+        DatadirCleanupManager purgeMgr = new DatadirCleanupManager(config
+                .getDataDir(), config.getDataLogDir(), config
+                .getSnapRetainCount(), config.getPurgeInterval());
+        purgeMgr.start();
+        //判断zk是standalone模式还是集群模式
+        if (args.length == 1 && config.isDistributed()) {
+            runFromConfig(config);
+        } else {
+            LOG.warn("Either no config or no quorum defined in config, running "
+                    + " in standalone mode");
+            // there is only server in the quorum -- run as standalone
+            ZooKeeperServerMain.main(args);
+        }
+    }
+
+
+```
+
+runFromConfig(config)方法
+
+```java
+ // 判断客户端server的端口是否为空
+if (config.getClientPortAddress() != null) {
+    cnxnFactory = ServerCnxnFactory.createFactory();
+    cnxnFactory.configure(config.getClientPortAddress(),
+                          config.getMaxClientCnxns(),
+                          false);
+}
+//设置各种参数，从zoo.cfg等
+
+//QuorumPeerMain的成员变量quorumPeer
+QuorumPeer quorumPeer = getQuorumPeer();
+quorumPeer.setRootMetricsContext(metricsProvider.getRootContext());
+quorumPeer.setTxnFactory(new FileTxnSnapLog(
+    config.getDataLogDir(),
+    config.getDataDir()));
+quorumPeer.enableLocalSessions(config.areLocalSessionsEnabled());
+quorumPeer.enableLocalSessionsUpgrading(
+    config.isLocalSessionsUpgradingEnabled());
+//quorumPeer.setQuorumPeers(config.getAllMembers());
+quorumPeer.setElectionType(config.getElectionAlg());
+quorumPeer.setMyid(config.getServerId());
+quorumPeer.setTickTime(config.getTickTime());
+quorumPeer.setMinSessionTimeout(config.getMinSessionTimeout());
+quorumPeer.setMaxSessionTimeout(config.getMaxSessionTimeout());
+//初始化时间
+quorumPeer.setInitLimit(config.getInitLimit());
+//同步时间，单位是tickTime
+quorumPeer.setSyncLimit(config.getSyncLimit());
+quorumPeer.setObserverMasterPort(config.getObserverMasterPort());
+quorumPeer.setConfigFileName(config.getConfigFilename());
+//QuorumPeer是一个线程，启动线程
+quorumPeer.start();
+quorumPeer.join();
+```
+
+QuorumPeer.start()方法
+
+```java
+@Override
+public synchronized void start() {
+    if (!getView().containsKey(myid)) {
+        throw new RuntimeException("My id " + myid + " not in the peer list");
+    }
+    //恢复database
+    loadDataBase();
+    startServerCnxnFactory();
+    try {
+        adminServer.start();
+    } catch (AdminServerException e) {
+        LOG.warn("Problem starting AdminServer", e);
+        System.out.println(e);
+    }
+    startLeaderElection();
+    super.start();
+}
+```
+
+QuorumPeer.loadDataBase()方法
+
+```java
+
+```
+
+
+
