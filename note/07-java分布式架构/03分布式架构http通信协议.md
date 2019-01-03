@@ -34,7 +34,7 @@
 
 
 
-![image-20181221220634457](/Users/king-pan/Documents/GitHub/java-architect/note/07-java分布式架构/images/image-20181221220634457.png)
+![image-20181221220634457](./images/image-20181221220634457.png)
 
 
 
