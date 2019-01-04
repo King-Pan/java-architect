@@ -2,11 +2,66 @@
 
 ## 数据存储
 
-​	事务日志: datadir目录中
+### 事务日志: 
 
-​	快照日志: datadir目录中
+​	zoo.cfg配置的dataLogDir目录中
 
-​	运行时日志： bin/zookeeper.out
+​	事务日志是增量的方式持久化到磁盘上
+
+​	文件命名:  日志文件的命名规则为log.xx，文件大小为64MB，xx表示写入该日志的第一个事务的ID，十六进制表示。
+
+### 快照日志: 
+
+​	zookeeper的数据在内存中是以树形结构进行存储的，而快照就是每隔一段时间就会把整个DataTree的数据序列化后存储在磁盘中，这就是zookeeper的快照文件。如果没有配置事务日志(即dataLogDir配置项)的路径，那么ZooKeeper的事务日志也存放在数据目录中。
+
+​	如果是事务ZXID5触发的拍快照，那么快照名就是snapshot.ZXID5，拍完后，下一个事务的ID就是ZXID6，于是新的事务日志名为log.ZXID6。 
+
+​	zoo.cfg配置的dataDir目录中
+
+​	快照日志是内存的全量快照
+
+### 运行时日志：
+
+ zookeeper按照目录的bin/zookeeper.out
+
+### 日志查看
+
+事务日志和快照日志都是二进制存储，需要通过zookeeper提供的日志查看工具LogFormatter来查看日志
+
+```shell
+java -classpath .:lib/slf4j-api-1.6.1.jar:zookeeper-3.4.10.jar org.apache.zookeeper.server.LogFormatter /tmp/zookeeper/version-2/log.1
+```
+
+### 相关配置
+
+- `dataDir`：
+  ZooKeeper的数据目录，主要目的是存储内存数据库序列化后的快照路径。如果没有配置事务日志(即dataLogDir配置项)的路径，那么ZooKeeper的事务日志也存放在数据目录中。
+- `dataLogDir`：
+  指定事务日志的存放目录。**事务日志对ZooKeeper的影响非常大，强烈建议事务日志目录和数据目录分开**，不要将事务日志记录在数据目录(主要用来存放内存数据库快照)下。
+- `preAllocSize`：
+  为事务日志预先开辟磁盘空间。默认是64M，意味着每个事务日志大小就是64M(可以去事务日志目录中看一下，每个事务日志只要被创建出来，就是64M)。如果ZooKeeper产生快照频率较大，可以考虑减小这个参数，因为每次快照后都会切换到新的事务日志，但前面的64M根本就没写完。(见snapCount配置项)
+- `snapCount`：
+  ZooKeeper使用事务日志和快照来持久化每个事务(注意是日志先写)。该配置项指定ZooKeeper在将内存数据库序列化为快照之前，需要先写多少次事务日志。也就是说，每写几次事务日志，就快照一次。默认值为100000。为了防止所有的ZooKeeper服务器节点同时生成快照(一般情况下，所有实例的配置文件是完全相同的)，当某节点的先写事务数量在(snapCount/2+1,snapCount)范围内时(挑选一个随机值)，这个值就是该节点拍快照的时机。
+- `autopurge.snapRetainCount`：
+  该配置项指定开启了ZooKeeper的自动清理功能后(见下一个配置项)，每次自动清理时要保留的版本数量。默认值为3，最小值也为3。它表示在自动清理时，会保留最近3个快照以及这3个快照对应的事务日志。其它的所有快照和日志都清理。
+- `autopurge.purgeInterval`：
+  指定触发自动清理功能的时间间隔，单位为小时，值为大于或等于1的整数，默认值为0，表示不开启自动清理功能。
+
+### 日志的存储格式以及日志文件命名是怎么做的？
+
+```
+事务日志和快照日志是二进制存储，事务日志存放在dataLogDir配置的目录中，如果没有配置，那么就默认存放在dataDir配置的目录
+
+快照日志存放在dataDir配置的目录中，默认放在/tmp/zookeeper目录下
+
+事务日志的命名: log.xx xx表示第一个事务的id（zxid），十六进制
+
+快照日志的命名: snapshot.yy  yy表示触发快照的事务id，下一个事务为zz,那么就会生成一个事务日志文件为log.zz
+
+每次快照后，下一个事务都会生成一个新的事务日志文件，并且事务日志文件初始化默认64MB
+```
+
+
 
 ## 基于JavaApi初探zookeeper的使用
 
