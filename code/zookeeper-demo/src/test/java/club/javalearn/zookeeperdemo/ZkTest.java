@@ -16,7 +16,7 @@ public class ZkTest {
     public static void before() {
         final CountDownLatch countDownLatch = new CountDownLatch(1);
         try {
-            zooKeeper = new ZooKeeper("47.92.72.146:2181", 4000, new Watcher() {
+            ZooKeeper zooKeeper = new ZooKeeper("47.92.72.146:2181", 4000, new Watcher() {
                 @Override
                 public void process(WatchedEvent event) {
                     System.out.println("默认事件:" + event.getType());
