@@ -486,7 +486,159 @@ void doTransport(int waitTimeOut, List<Packet> pendingQueue, ClientCnxn cnxn)
 }
 ```
 
+> 核心方法doIO(pendingQueue,cnxn)
+
+```java
+ /**
+     * @return true if a packet was received
+     * @throws InterruptedException
+     * @throws IOException
+     */
+    void doIO(List<Packet> pendingQueue, ClientCnxn cnxn)
+      throws InterruptedException, IOException {
+        SocketChannel sock = (SocketChannel) sockKey.channel();
+        if (sock == null) {
+            throw new IOException("Socket is null!");
+        }
+        if (sockKey.isReadable()) {
+            int rc = sock.read(incomingBuffer);
+            if (rc < 0) {
+                throw new EndOfStreamException(
+                        "Unable to read additional data from server sessionid 0x"
+                                + Long.toHexString(sessionId)
+                                + ", likely server has closed socket");
+            }
+            if (!incomingBuffer.hasRemaining()) {
+                incomingBuffer.flip();
+                if (incomingBuffer == lenBuffer) {
+                    recvCount.getAndIncrement();
+                    readLength();
+                } else if (!initialized) {
+                    readConnectResult();
+                    enableRead();
+                    if (findSendablePacket(outgoingQueue,
+                            sendThread.tunnelAuthInProgress()) != null) {
+                        // Since SASL authentication has completed (if client is configured to do so),
+                        // outgoing packets waiting in the outgoingQueue can now be sent.
+                        enableWrite();
+                    }
+                    lenBuffer.clear();
+                    incomingBuffer = lenBuffer;
+                    updateLastHeard();
+                    initialized = true;
+                } else {
+                    sendThread.readResponse(incomingBuffer);
+                    lenBuffer.clear();
+                    incomingBuffer = lenBuffer;
+                    updateLastHeard();
+                }
+            }
+        }
+        if (sockKey.isWritable()) {
+            Packet p = findSendablePacket(outgoingQueue,
+                    sendThread.tunnelAuthInProgress());
+
+            if (p != null) {
+                updateLastSend();
+                // If we already started writing p, p.bb will already exist
+                if (p.bb == null) {
+                    if ((p.requestHeader != null) &&
+                            (p.requestHeader.getType() != OpCode.ping) &&
+                            (p.requestHeader.getType() != OpCode.auth)) {
+                        p.requestHeader.setXid(cnxn.getXid());
+                    }
+                    p.createBB();
+                }
+                sock.write(p.bb);
+                if (!p.bb.hasRemaining()) {
+                    sentCount.getAndIncrement();
+                    outgoingQueue.removeFirstOccurrence(p);
+                    if (p.requestHeader != null
+                            && p.requestHeader.getType() != OpCode.ping
+                            && p.requestHeader.getType() != OpCode.auth) {
+                        synchronized (pendingQueue) {
+                            pendingQueue.add(p);
+                        }
+                    }
+                }
+            }
+            if (outgoingQueue.isEmpty()) {
+                // No more packets to send: turn off write interest flag.
+                // Will be turned on later by a later call to enableWrite(),
+                // from within ZooKeeperSaslClient (if client is configured
+                // to attempt SASL authentication), or in either doIO() or
+                // in doTransport() if not.
+                disableWrite();
+            } else if (!initialized && p != null && !p.bb.hasRemaining()) {
+                // On initial connection, write the complete connect request
+                // packet, but then disable further writes until after
+                // receiving a successful connection response.  If the
+                // session is expired, then the server sends the expiration
+                // response and immediately closes its end of the socket.  If
+                // the client is simultaneously writing on its end, then the
+                // TCP stack may choose to abort with RST, in which case the
+                // client would never receive the session expired event.  See
+                // http://docs.oracle.com/javase/6/docs/technotes/guides/net/articles/connection_release.html
+                disableWrite();
+            } else {
+                // Just in case
+                enableWrite();
+            }
+        }
+    }
+```
 
 
 
+
+
+
+
+## 重要类分析
+
+
+
+### Packet
+
+#### 类图
+
+![1547130266192](./images/Packet-class.png)
+
+#### 重要属性和方法
+
+​	Packet中包含了最基本的请求头（requestHeader）、响应头（replyHeader）、请求体（request）、响应体（response）、节点路径（clientPath/serverPath）和注册的Watcher（watchRegistration）等信息。
+
+​	Packet的createBB()方法负责对Packet对象进行序列化，最终生成可用于底层网络传输的ByteBuffer对象。在这个过程中，只会将requestHeader、request和readOnly三个属性进行序列化，其余属性都保存在客户端的上下文，不会进行与服务端之间的网络传输。
+
+#### 源码分析
+
+> org.apache.zookeeper.ClientCnxn.Packet#createBB
+
+```java
+ public void createBB() {
+            try {
+                ByteArrayOutputStream baos = new ByteArrayOutputStream();
+                BinaryOutputArchive boa = BinaryOutputArchive.getArchive(baos);
+                boa.writeInt(-1, "len"); // We'll fill this in later
+                //序列号requestHeader
+                if (requestHeader != null) {
+                    requestHeader.serialize(boa, "header");
+                }
+                //如果request类型ConnectRequest
+                if (request instanceof ConnectRequest) {
+                    request.serialize(boa, "connect");
+                    // append "am-I-allowed-to-be-readonly" flag
+                    boa.writeBool(readOnly, "readOnly");
+                } else if (request != null) {
+                    request.serialize(boa, "request");
+                }
+                baos.close();
+                this.bb = ByteBuffer.wrap(baos.toByteArray());
+                this.bb.putInt(this.bb.capacity() - 4);
+                this.bb.rewind();
+            } catch (IOException e) {
+                LOG.warn("Ignoring unexpected exception", e);
+            }
+        }
+```
 
