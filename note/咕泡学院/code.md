@@ -33,6 +33,8 @@
 
 >12月链接：https://pan.baidu.com/s/1F6MNB7qPTIVjwLCd9dtUgw 密码：7zin 
 
+>1月链接：https://pan.baidu.com/s/1QQ9b56X84zmoEChk7l3pzw  密码：hxhc
+
  **`说明`**：百度网盘不稳定，多提供给大家一个下载地址
 
 **`VIP往期`视频链接：https://pan.baidu.com/s/1XqKG9TRVIqg90uYYEc3QfA 密码：252z** （加密处理）
