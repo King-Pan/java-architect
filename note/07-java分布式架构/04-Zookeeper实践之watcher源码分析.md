@@ -624,7 +624,7 @@ void doTransport(int waitTimeOut, List<Packet> pendingQueue, ClientCnxn cnxn)
                 if (requestHeader != null) {
                     requestHeader.serialize(boa, "header");
                 }
-                //如果request类型ConnectRequest
+                //如果request类型是ConnectRequest
                 if (request instanceof ConnectRequest) {
                     request.serialize(boa, "connect");
                     // append "am-I-allowed-to-be-readonly" flag
