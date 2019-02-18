@@ -1,4 +1,4 @@
-package club.javalearn.socket.bio;
+package club.javalearn.socket.bio2;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -20,13 +20,12 @@ public class Server {
             System.out.println("服务端启动成功");
             //阻塞，等待客户端连接
             Socket socket = serverSocket.accept();
+            System.out.println("客户端连接成功.");
             BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
             String line = null;
             PrintWriter out = new PrintWriter(socket.getOutputStream());
-            //向客户端发送消息
             out.println("服务器: 客户端连接成功，发送数据");
             out.flush();
-            //循环读取客户端消息
             while (true){
                 line = in.readLine();
                 if(line!=null){
@@ -37,6 +36,8 @@ public class Server {
 
             }
 
+
+            //
         } catch (IOException e) {
             e.printStackTrace();
         }
