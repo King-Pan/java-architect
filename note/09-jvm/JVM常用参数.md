@@ -10,6 +10,24 @@ java -Xms64m -Xmx128m  JVMTest # 设置
 
 
 
+## java -D属性名 设置系统参数
+
+> java类
+
+```shell
+
+```
+
+
+
+
+
+```shell
+
+```
+
+
+
 
 
 ## JPS命令
