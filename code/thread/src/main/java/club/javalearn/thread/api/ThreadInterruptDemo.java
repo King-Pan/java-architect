@@ -1,4 +1,4 @@
-package club.javalearn.thread.t4;
+package club.javalearn.thread.api;
 
 import java.util.concurrent.TimeUnit;
 

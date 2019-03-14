@@ -1,4 +1,4 @@
-package club.javalearn.thread2.dead;
+package club.javalearn.thread.dead;
 
 /**
  * @author king-pan

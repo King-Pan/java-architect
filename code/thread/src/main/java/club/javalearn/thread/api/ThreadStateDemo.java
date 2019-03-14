@@ -1,4 +1,4 @@
-package club.javalearn.thread.state;
+package club.javalearn.thread.api;
 
 /**
  * @author king-pan
@@ -19,8 +19,10 @@ public class ThreadStateDemo {
         });
         t.start();
         try {
-            t.join();
-            t.start();
+           // synchronized (ThreadStateDemo.class){
+                t.join();
+                t.start();
+           // }
         } catch (InterruptedException e) {
             e.printStackTrace();
         }

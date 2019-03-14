@@ -1,4 +1,4 @@
-package club.javalearn.thread.t1;
+package club.javalearn.thread.api;
 
 import java.util.Date;
 import java.util.concurrent.*;
