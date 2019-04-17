@@ -480,6 +480,96 @@ OK
 
 ## 2.5、Redis list数据类型
 
+### 2.5.1、List数据结构
+
+​	List是一个有序的、可以重复的列表
+
+​     <https://processon.com/diagraming/5cb739ade4b0bab9095c969a>
+
+<https://www.cnblogs.com/knowledgesea/p/4972771.html>
+
+### 2.5.2、场景
+
+### 2.5.3、实战
+
+### 2.5.4、常用API
+
+> lpush key value
+
+向list列表左侧添加元素
+
+```shell
+127.0.0.1:6379> lpush list 1
+(integer) 1
+```
+
+> rpush key value
+
+向List列表右侧添加元素
+
+```shell
+127.0.0.1:6379> rpush list 2
+(integer) 2
+```
+
+> lrange key start end(从0开始,-1代表所有的list项)
+
+通过范围查询List列表中的元素
+
+```shell
+127.0.0.1:6379> lrange list 0 1
+1) "1"
+2) "2"
+127.0.0.1:6379> lrange list 0 -1
+1) "1"
+2) "2"
+127.0.0.1:6379> lpush list 0
+(integer) 3
+127.0.0.1:6379> lrange list 0 -1
+1) "0"
+2) "1"
+3) "2"
+127.0.0.1:6379> lrange list 0 1
+1) "0"
+2) "1"
+```
+
+> lpop key
+
+从List列表左侧移除一个元素，并且返回该元素
+
+```shell
+127.0.0.1:6379> lrange list 0 -1
+1) "0"
+2) "1"
+3) "2"
+127.0.0.1:6379> lpop list
+"0"
+127.0.0.1:6379> lrange list 0 -1
+1) "1"
+2) "2"
+```
+
+> rpop key
+
+从List列表右侧移除一个元素，并且返回该元素
+
+```shell
+127.0.0.1:6379> lrange list 0 -1
+1) "1"
+2) "2"
+127.0.0.1:6379> rpop list
+"2"
+127.0.0.1:6379> lrange list 0 -1
+1) "1"
+```
+
+
+
+### 2.5.5、List API时间复杂度
+
+
+
 ## 2.6、Redis Hash数据类型
 
 ### 2.6.1、Hash哈希特点
