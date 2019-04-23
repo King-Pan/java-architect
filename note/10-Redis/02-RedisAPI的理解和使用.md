@@ -488,9 +488,20 @@ OK
 
 <https://www.cnblogs.com/knowledgesea/p/4972771.html>
 
+
+
+> 提示
+
+* Lpush + lpop = stack 后进先出
+* lpush + rpop = queue 先进先出
+* lpush + ltrim = capped collection 固定集合
+* lpush + brpop = message queue 阻塞队列
+
 ### 2.5.2、场景
 
 ### 2.5.3、实战
+
+TimeLine、微博评论、朋友圈评论、论坛回复等
 
 ### 2.5.4、常用API
 
@@ -564,7 +575,205 @@ OK
 1) "1"
 ```
 
+> lrange key start end:时间复杂度O(n)
 
+获取指定索引范围内的元素，0 -1查看全部
+
+```shell
+127.0.0.1:6379> rpush list a b c d e
+(integer) 6
+127.0.0.1:6379> lrange list 0 -1
+1) "1"
+2) "a"
+3) "b"
+4) "c"
+5) "d"
+6) "e"
+```
+
+> ltrim key start end: 时间复杂度:O(n)
+
+保留列表中索引范围内的元素，删除其他元素
+
+```shell
+127.0.0.1:6379> lrange list 0 -1
+1) "1"
+2) "a"
+3) "b"
+4) "c"
+5) "d"
+6) "e"
+127.0.0.1:6379> ltrim list 0 4
+OK
+127.0.0.1:6379> lrange list 0 -1
+1) "1"
+2) "a"
+3) "b"
+4) "c"
+5) "d"
+
+```
+
+> brpop key
+
+从列表的右侧弹出一个元素，如果没有元素则阻塞
+
+timeout是阻塞超时时间，timeout=0 y一直阻塞直到从右侧弹出元素
+
+***使用lpush + brpop 实现阻塞消息队列***
+
+```shell
+127.0.0.1:6379> lpush blist 1
+(integer) 1
+127.0.0.1:6379> lrange blist 0 -1
+1) "1"
+127.0.0.1:6379> brpop blist 0
+1) "blist"
+2) "1"
+127.0.0.1:6379> brpop blist 0  # 阻塞在这儿，直到列表中有元素，阻塞消息队列的实现
+```
+
+> linsert key before|after value newValue
+
+在value前后插入新的元素: 时间复杂度o(n)
+
+```shell
+127.0.0.1:6379> rpush l1 a b c d
+(integer) 4
+127.0.0.1:6379> lrange l1 0 -1
+1) "a"
+2) "b"
+3) "c"
+4) "d"
+127.0.0.1:6379> linsert l1 before b java
+(integer) 5
+127.0.0.1:6379> lrange l1 0 -1
+1) "a"
+2) "java"
+3) "b"
+4) "c"
+5) "d"
+127.0.0.1:6379> linsert l1 after b php
+(integer) 6
+127.0.0.1:6379> lrange l1 0 -1
+1) "a"
+2) "java"
+3) "b"
+4) "php"
+5) "c"
+6) "d"
+```
+
+> lrem key count value: 时间复杂度O(n)
+
+* count = 0 删除所有value相等的项
+* count > 0 从左到右最多删除count个value项
+* count <0 从右向左最多删除count个value项
+
+```sh
+127.0.0.1:6379> rpush l2 1 2 3 3 2 3 4 6 3 2
+(integer) 10
+127.0.0.1:6379> lrange l2 0 -1
+ 1) "1"
+ 2) "2"
+ 3) "3"
+ 4) "3"
+ 5) "2"
+ 6) "3"
+ 7) "4"
+ 8) "6"
+ 9) "3"
+10) "2"
+127.0.0.1:6379> lrem l2 2 3
+(integer) 2
+127.0.0.1:6379> lrange l2 0 -1
+1) "1"
+2) "2"
+3) "2"
+4) "3"
+5) "4"
+6) "6"
+7) "3"
+8) "2"
+127.0.0.1:6379> rpush l3 1 2 3 3 2 3 4 6 3 2
+(integer) 10
+127.0.0.1:6379> lrem l3 0 3
+(integer) 4
+127.0.0.1:6379> lrange l3 0 -1
+1) "1"
+2) "2"
+3) "2"
+4) "4"
+5) "6"
+6) "2"
+127.0.0.1:6379> rpush l4 1 2 3 3 2 3 4 6 3 2
+(integer) 10
+127.0.0.1:6379> lrem l4 -3 3
+(integer) 3
+127.0.0.1:6379> lrange l4 0 -1
+1) "1"
+2) "2"
+3) "3"
+4) "2"
+5) "4"
+6) "6"
+7) "2"
+```
+
+> lindex key index:时间复杂度O(n)
+
+获取指定索引下的元素
+
+```shell
+127.0.0.1:6379> lrange list 0 -1
+1) "1"
+2) "a"
+3) "b"
+4) "c"
+5) "d"
+127.0.0.1:6379> lindex list 1
+"a"
+127.0.0.1:6379> lindex list 3
+"c"
+
+```
+
+> llen key:时间复杂度O(1)
+
+获取列表的长度
+
+```shell
+127.0.0.1:6379> lrange list 0 -1
+1) "1"
+2) "a"
+3) "b"
+4) "c"
+5) "d"
+127.0.0.1:6379> llen list
+(integer) 5
+```
+
+> lset key index newValue: 时间复杂度O(n)
+
+设置列表指定索引的值为newValue
+
+```shell
+127.0.0.1:6379> lrange list 0 -1
+1) "1"
+2) "a"
+3) "b"
+4) "c"
+5) "d"
+127.0.0.1:6379> lset list 1 java
+OK
+127.0.0.1:6379> lrange list 0 -1
+1) "1"
+2) "java"
+3) "b"
+4) "c"
+5) "d"
+
+```
 
 ### 2.5.5、List API时间复杂度
 
