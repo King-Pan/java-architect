@@ -58,7 +58,6 @@ public class Shell {
             String inline;
             while ((inline = br.readLine()) != null) {
                 isFish = false;
-                System.out.println(inline);
             }
             br.close();
             //错误信息
