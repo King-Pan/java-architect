@@ -789,7 +789,101 @@ OK
 
 key-value     value 是  field1 value1 field2 value2
 
+对应java中的Map<String,Map<String,String>>结构
 
 
 
+### 2.6.2、场景
+
+
+
+### 2.6.3、实战
+
+### 2.6.4、常用API
+
+> hset key field value
+
+设置hash key对应field的value
+
+```shell
+127.0.0.1:6379> hset user:1:info age 23
+(integer) 1
+127.0.0.1:6379> hget user:1:info age
+"23"
+```
+
+> hget key field 
+
+获取hash key中对应field的值
+
+```shell
+127.0.0.1:6379> hset user:1:info age 23
+(integer) 1
+127.0.0.1:6379> hget user:1:info age
+"23"
+127.0.0.1:6379> hset user:1:info name king
+(integer) 1
+127.0.0.1:6379> hget user:1:info name
+"king"
+```
+
+> hdel key field
+
+删除hash key对应field的value
+
+```shell
+127.0.0.1:6379> hdel user:1:info age
+(integer) 1
+127.0.0.1:6379> hget user:1:info age
+(nil)
+```
+
+> hexists key field
+
+判断hash key是否有field
+
+```shell
+127.0.0.1:6379> hget user:1:info name
+"king"
+127.0.0.1:6379> hget user:1:info age
+(nil)
+127.0.0.1:6379> hexists user:1:info age
+(integer) 0
+127.0.0.1:6379> hexists user:1:info name
+(integer) 1
+```
+
+> hlen key
+
+获取hash key field的数量
+
+```shell
+127.0.0.1:6379> hlen user:1:info
+(integer) 1
+127.0.0.1:6379> hset user:1:info sex man
+(integer) 1
+127.0.0.1:6379> hlen user:1:info
+(integer) 2
+```
+
+>hmget key field1 field2
+
+获取hash key多个field的值
+
+```shell
+127.0.0.1:6379> hmget user:1:info age name sex
+1) (nil)
+2) "king"
+3) "man"
+```
+
+> hmset key field1 value1 field2 value2 ...
+
+设置hash key 多个field的值
+
+```sh
+
+```
+
+### 2.6.5、Hash API时间复杂度
 
