@@ -34,7 +34,9 @@ public class VolatileDemo {
 
 
 class MyData {
-    //内存不可见
+    /**
+     * 内存不可见
+     */
     int num;
 
     public void addTo10() {
