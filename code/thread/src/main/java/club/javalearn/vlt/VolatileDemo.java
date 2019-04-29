@@ -9,9 +9,9 @@ import java.util.concurrent.TimeUnit;
  * @Description ${DESCRIPTION}
  */
 public class VolatileDemo {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         MyData myData = new MyData();
-        new Thread(() -> {
+        Thread t1 = new Thread(() -> {
             System.out.println(Thread.currentThread().getName() + "\t come in.");
             try {
                 TimeUnit.SECONDS.sleep(3);
@@ -20,7 +20,9 @@ public class VolatileDemo {
             }
             myData.addTo10();
             System.out.println(Thread.currentThread().getName() + "\t end. value=" + myData.num);
-        }).start();
+        });
+        t1.start();
+        //t1.join();
 
 
         while (myData.num == 0) {
@@ -39,7 +41,7 @@ class MyData {
      */
     int num;
 
-    public void addTo10() {
+    public  synchronized void addTo10() {
         this.num = 10;
     }
 }
