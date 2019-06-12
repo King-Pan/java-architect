@@ -8,7 +8,7 @@ package club.javalearn.pattern.singleton.lazy;
 public class LazySingleton {
     private LazySingleton(){}
 
-    private static LazySingleton instance;
+    private static LazySingleton instance ;
 
     public static LazySingleton getInstance(){
         if(null == instance){

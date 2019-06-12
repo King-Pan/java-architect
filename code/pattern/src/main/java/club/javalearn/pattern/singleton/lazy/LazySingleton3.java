@@ -17,7 +17,7 @@ public class LazySingleton3 {
     private LazySingleton3(){}
 
 
-    public static LazySingleton3 getInstance() {
+    public  static LazySingleton3 getInstance() {
         return LazySingletonHelper.INSTANCE;
     }
 
