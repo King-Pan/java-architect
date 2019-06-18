@@ -56,6 +56,44 @@
 
 
 
+## Spring Boot版本差异
+
+
+
+> 差异列表
+
+| 旧的属性                | 新的属性                               | 属性含义              |
+| ----------------------- | -------------------------------------- | --------------------- |
+| endpoints.<id>.*        | management.endpoint.<id>.*             | endpoint各属性配置    |
+| endpoints.cors.*        | management.endpoints.web.cors.*        | web的cors相关配置     |
+| endpoints.jmx.*         | management.endpoints.jmx.*             | jmx相关配置           |
+| management.address      | management.server.address              | 地址                  |
+| management.context-path | management.server.servlet.context-path | actuator路径配置      |
+| management.ssl.*        | management.server.ssl.*                | actuator的ssl相关配置 |
+| management.port         | management.server.port                 | actuator端口          |
+
+> 请求路径
+
+1. 所有 endpoints 默认情况下都已移至 `/actuator`。就是多了跟路径 `actuator` ；
+
+2. 上个版本中的 `management/context-path:` 和 `management/port:` 改为 :
+
+   ```yml
+   management:
+    server:
+      port: 8004
+      servlet:
+        context-path: /xxx # 只有在设置了 management.server.port 时才有效 
+   ```
+
+​	另外，您还可以使用新的单独属性 `management.endpoints.web.base-path` 为管理端点设置基本路径。
+
+例如，如果你设置management.server.servlet.context-path=/management和management.endpoints.web.base-path=/application，你就可以在下面的路径到达终点健康：/management/application/health。
+
+1. 如果你想恢复 1.x 的行为（即具有`/health`代替`/actuator/health`），设置以下属性：`management.endpoints.web.base-path=/`
+
+​	
+
 ## endpoint列表
 
 > 具体有如下节点
@@ -191,6 +229,8 @@ management:
       enable: true
       show-details: always
 ```
+
+
 
 
 
