@@ -60,7 +60,7 @@
 
 
 
-> 差异列表
+> 差异配置属性列表
 
 | 旧的属性                | 新的属性                               | 属性含义              |
 | ----------------------- | -------------------------------------- | --------------------- |
@@ -230,7 +230,272 @@ management:
       show-details: always
 ```
 
+**效果**
+
+![1560913337923](C:\Users\king-pan\Documents\GitHub\java-architect\note\06-SpringBoot\images\health-all-info.png)
+
+```
+{
+    status: "UP",
+    details: {
+        diskSpace: {
+            status: "UP",
+            details: {
+                total: 127426097152,
+                free: 77610815488,
+                threshold: 10485760
+            }
+        }
+    }
+}
+```
+
+​		从上面的信息中我们可以得知，健康检查可以获取服务的状态、磁盘状态等信息。
+
+> 默认配置解读
+
+​		开启查看详细健康状态比较简单，通过配置参数`management.endpoint.health.show-details`来进行修改，该参数的值由`org.springframework.boot.actuate.health.ShowDetails`枚举提供配置值，`ShowDetails`源码如下所示：
+
+```java
+/**
+ * Options for showing details in responses from the {@link HealthEndpoint} web
+ * extensions.
+ *
+ * @author Andy Wilkinson
+ * @since 2.0.0
+ */
+public enum ShowDetails {
+
+    /**
+     * Never show details in the response.
+     */
+    NEVER,
+
+    /**
+     * Show details in the response when accessed by an authorized user.
+     */
+    WHEN_AUTHORIZED,
+
+    /**
+     * Always show details in the response.
+     */
+    ALWAYS
+
+}
+```
+
+​		在`spring-configuration-metadata.json`元数据文件内，配置的`showDetails`的默认值为`never`，也就是不显示详细信息，配置如下所示：
+
+```java
+//.....省略
+{
+  "sourceType": "org.springframework.boot.actuate.autoconfigure.health.HealthEndpointProperties",
+  "defaultValue": "never",
+  "name": "management.endpoint.health.show-details",
+  "description": "When to show full health details.",
+  "type": "org.springframework.boot.actuate.health.ShowDetails"
+},
+//.....省略
+```
+
+### /info endpoint
+
+​		info endpoint展示服务的基本信息， 默认是没有信息的。
+
+​		它通过`META-INF/build-info.properties`来获得编译信息，通过`git.properties`来获得Git信息。它同时可以展示任何其他信息，只要这个环境property中含有`info`key。
+
+```yml
+# INFO ENDPOINT CONFIGURATION
+info:
+  app:
+    name: @project.name@
+    description: @project.description@
+    version: @project.version@
+    encoding: @project.build.sourceEncoding@
+    java:
+      version: @java.version@
+```
+
+​			注意，我使用了Spring Boot的[Automatic property expansion](https://docs.spring.io/spring-boot/docs/current/reference/html/howto-properties-and-configuration.html#howto-automatic-expansion) 特征来扩展来自maven工程的properties。
+
+一旦你增加上面的properties，`info` endpoint将展示如下信息：
+
+```json
+{
+    app: {
+        name: "actuator",
+        description: "Demo project for Spring Boot",
+        version: "0.0.1-SNAPSHOT",
+        encoding: "UTF-8",
+        java: {
+        	version: "1.8.0_131"
+        }
+    }
+}
+```
+
+### /loggers endpoint
+
+### 
+
+`loggers` endpoint，可以通过访问<http://localhost:8080/actuator/loggers>来进入。它展示了应用中可配置的loggers的列表和相关的日志等级。
+
+你同样能够使用[http://localhost:8080/actuator/loggers/{name}](http://localhost:8080/actuator/loggers/{name)来展示特定logger的细节。
+
+举个例子，为了获得`root` logger的细节，你可以使用<http://localhost:8080/actuator/loggers/root>：
 
 
 
+```json
+{
+   "configuredLevel":"INFO",
+   "effectiveLevel":"INFO"
+}
+```
+
+#### 在运行时改变日志等级
+
+`loggers` endpoint也允许你在运行时改变应用的日志等级。
+
+举个例子，为了改变`root` logger的等级为`DEBUG` ，发送一个`POST`请求到<http://localhost:8080/actuator/loggers/root>，加入如下参数
+
+```json
+{
+   "configuredLevel": "DEBUG"
+}
+```
+
+* 这个功能对于线上问题的排查非常有用。
+
+* 同时，你可以通过传递`null`值给`configuredLevel`来重置日志等级。
+
+### /metrics endpoint
+
+`metrics` endpoint展示了你可以追踪的所有的度量。
+
+```json
+{
+    names: [
+        "jvm.threads.states",
+        "jvm.gc.memory.promoted",
+        "jvm.memory.committed",
+        "jvm.memory.used",
+        "jvm.gc.max.data.size",
+        "system.cpu.count",
+        "logback.events",
+        "tomcat.global.sent",
+        "jvm.buffer.memory.used",
+        "tomcat.sessions.created",
+        "jvm.memory.max",
+        "jvm.threads.daemon",
+        "system.cpu.usage",
+        "jvm.gc.memory.allocated",
+        "tomcat.global.request.max",
+        "tomcat.global.request",
+        "tomcat.sessions.expired",
+        "jvm.threads.live",
+        "jvm.threads.peak",
+        "tomcat.global.received",
+        "process.uptime",
+        "tomcat.sessions.rejected",
+        "process.cpu.usage",
+        "tomcat.threads.config.max",
+        "jvm.classes.loaded",
+        "http.server.requests",
+        "jvm.gc.pause",
+        "jvm.classes.unloaded",
+        "tomcat.global.error",
+        "tomcat.sessions.active.current",
+        "tomcat.sessions.alive.max",
+        "jvm.gc.live.data.size",
+        "tomcat.threads.current",
+        "jvm.buffer.count",
+        "jvm.buffer.total.capacity",
+        "tomcat.sessions.active.max",
+        "tomcat.threads.busy",
+        "process.start.time"
+    ]
+}
+```
+
+​		想要获得每个度量的详细信息，你需要传递度量的名称到URL中，像[http://localhost:8080/actuator/metrics/{MetricName}](http://localhost:8080/actuator/metrics/{MetricName)
+
+​		举个例子，获得`systems.cpu.usage`的详细信息，使用以下URL<http://localhost:8080/actuator/metrics/system.cpu.usage>。它将显示如下内容:
+
+```json
+{
+    name: "system.cpu.usage",
+    description: "The "recent cpu usage" for the whole system",
+    baseUnit: null,
+    measurements: [
+        {
+            statistic: "VALUE",
+            value: 0
+        }
+    ],
+    availableTags: [ ]
+}
+```
+
+### 其他endpoint
+
+​		其他endpoint请参考 [actuator](http://localhost:8080/actuator)
+
+
+
+## 自定义监控项
+
+
+
+### java代码
+
+```java
+package club.javalearn.actuator.health;
+
+import org.springframework.boot.actuate.health.AbstractHealthIndicator;
+import org.springframework.boot.actuate.health.Health;
+import org.springframework.stereotype.Component;
+
+@Component
+public class HbaseHealthIndicator extends AbstractHealthIndicator {
+    @Override
+    protected void doHealthCheck(Health.Builder builder) throws Exception {
+        builder.up()
+                .withDetail("ip", "127.0.0.1")
+                .withDetail("time", "100ms");
+    }
+}
+```
+
+### 注意事项
+
+> AbstractHealthIndicator实现类的命名与在http请求结果的返回项有对应关系
+
+例如：
+
+* Java类名: HbaseHealthIndicator
+* 返回结果: details.hbase  等于HbaseHealthIndicator 的HealthIndicator前缀
+
+```json
+{
+    status: "UP",
+    details: {
+        hbase: {
+            status: "UP",
+            details: {
+                app: "Alive and Kicking",
+                error: "Nothing! I'm good."
+            }
+        },
+        diskSpace: {
+            status: "UP",
+            details: {
+                total: 127426097152,
+                free: 78129496064,
+                threshold: 10485760
+            }
+        }
+    }
+}
+```
 
