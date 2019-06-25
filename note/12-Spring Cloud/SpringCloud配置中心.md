@@ -103,5 +103,148 @@ spring:
     <groupId>org.springframework.cloud</groupId>
     <artifactId>spring-cloud-config-monitor</artifactId>
 </dependency>
+<dependency>
+    <groupId>org.springframework.cloud</groupId>
+    <artifactId>spring-cloud-starter-bus-amqp</artifactId>
+</dependency>
 ```
 
+​		然后配置webhook   
+
+```shell
+http://dzyw4v.natappfree.cc/monitor?path=*
+```
+
+​		如果内网gitlab，可以直接使用ip，公网需要使用natapp做内网穿透
+
+
+
+## 配置中心客户端
+
+###  添加依赖
+
+```xml
+<dependency>
+    <groupId>org.springframework.cloud</groupId>
+    <artifactId>spring-cloud-config-client</artifactId>
+</dependency>
+```
+
+### git配置文件
+
+​		project-dev.yml文件内容
+
+```yml
+server:
+  port: 1111
+person:
+  name: king
+  age: 30
+```
+
+### 修改客户端配置文件名称
+
+​		客户端配置文件名称需要从application.yml修改为bootstrap.yml。
+
+​		bootstrap.yml文件内容
+
+```yml
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+spring:
+  application:
+    name: project
+  profiles:
+    active: dev
+  cloud:
+    bus:
+      id: ${vcap.application.name:${spring.application.name:application}}:${vcap.application.instance_index:${spring.cloud.config.profile:${local.server.port:${server.port:0}}}}:${vcap.application.instance_id:${random.value}}
+    config:
+      uri: http://localhost:8080/
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+server:
+  port: 1001
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+```
+
+​		这儿需要配置注册中心的uri以及spring.cloud.bus.id，并且打开了actuator的所有web endpoint
+
+​		这儿的rabbitmq是默认连接本地的，如果需要修改配置请使用下列参数配置:
+
+```properties
+spring.rabbitmq.host=ip
+spring.rabbitmq.port=端口
+spring.rabbitmq.username=用户名
+spring.rabbitmq.password=密码
+```
+
+
+
+
+
+### 自动刷新配置
+
+```java
+package club.javalearn.ebuyprojectweb.web;
+
+import club.javalearn.ebuyprojectweb.config.Person;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+/**
+ * @className: AutoRefreshController
+ * @description:
+ * @author: King-Pan(pwpw1218@gmail.com)
+ * @date: 2019-06-25 23:56
+ */
+@RefreshScope
+@RestController
+public class AutoRefreshController {
+
+    @Autowired
+    private Person person;
+
+    @GetMapping("/test")
+    public String test() {
+        return person.getName() + "," + person.getAge();
+    }
+}
+```
+
+
+
+
+
+## 配置中心的高可用
+
+​		上面我们做的配置中心是单节点，如果配置中心挂了，我们的服务就会出现问题。那么需要我们实现配置中心的高可用，来保障其他应用服务的可用性。
+
+
+
+> 使用eureka的服务列表调用配置中心
+
+​		主要是去掉了`spring.cloud.config.uri`直接指向 Server 端地址的配置，增加了最后的三个配置：
+
+- `spring.cloud.config.discovery.enabled`：开启 Config 服务发现支持
+- `spring.cloud.config.discovery.serviceId`：指定 Server 端的 name, 也就是 Server 端`spring.application.name`的值
+- `eureka.client.service-url.defaultZone`：指向配置中心的地址
+
+> git网站上配置多个webhook触发自动刷新
+
+
+
+![1561480407230](C:\Users\King-Pan\Documents\GitHub\java-architect\note\12-Spring Cloud\images\webhook-gz.png)
+
+> eureka高可用，使用多个注册中心保障服务的高可用。
