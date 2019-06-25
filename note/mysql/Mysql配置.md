@@ -112,7 +112,7 @@ alter user 'root'@'localhost' identified by 'Root!!2019';
 
 flush privileges 
 
-CREATE USER 'ebuy' IDENTIFIED BY 'Ebuy^&2019';
+CREATE USER 'ebuy'@'*' IDENTIFIED BY 'Ebuy^&2019';
 
 grant all on *.* to 'ebuy' identified by 'Ebuy^&2019'  with grant option;
 
