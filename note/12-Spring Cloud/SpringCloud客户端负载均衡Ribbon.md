@@ -29,7 +29,7 @@ ServerList 然后过滤
 
 		1. choose(serviceId) 通过ILoadBalancer(BaseBalancer)去Eureka Server查找服务
   		2. 对服务列表进行过滤
-  		3. 然后默认使用轮询的规则做负载均衡
+    		3. 然后默认使用轮询的规则做负载均衡
 
 
 

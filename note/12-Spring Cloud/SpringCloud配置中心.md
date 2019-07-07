@@ -11,6 +11,7 @@ https://blog.csdn.net/xlgen157387/article/details/82840553
 ## 为什么需要统一配置中心
 
 * 不方便维护（一句不方便维护包含了多少苦和累啊）
+  * 
   * 单机、集群、分布式导致服务器主机的剧增
   * 应用部署数的剧增都会导致维护工作增加
 * 配置内容安全与权限
@@ -74,6 +75,8 @@ spring:
 		添加git仓库信息，使用git拉取配置到本地路径下，默认会放入到Temp目录下，生产环境下，需要修改默认路径，需要注意，配置的路径会被config server清空。
 
  
+
+
 
 
 ### 请求测试
@@ -248,3 +251,4 @@ public class AutoRefreshController {
 ![1561480407230](C:\Users\King-Pan\Documents\GitHub\java-architect\note\12-Spring Cloud\images\webhook-gz.png)
 
 > eureka高可用，使用多个注册中心保障服务的高可用。
+

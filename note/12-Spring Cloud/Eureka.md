@@ -169,6 +169,59 @@ eureka:
 
 
 
+## Eureka高可用
+
+```yml
+spring:
+  application:
+    name: eureka-server
+server:
+  port: 8761
+eureka:
+  instance:
+    hostname: eureka-01
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      defaultZone: http://eureka-02:8762/eureka/,http://eureka-03:8763/eureka/
+---
+spring:
+  profiles: dev-2
+server:
+  port: 8762
+eureka:
+  instance:
+    hostname: eureka-02
+  client:
+    service-url:
+      defaultZone: http://eureka-01:8761/eureka/,http://eureka-02:8763/eureka/
+---
+spring:
+  profiles: dev-3
+server:
+  port: 8763
+eureka:
+  instance:
+    hostname: eureka-03
+  client:
+    service-url:
+      defaultZone: http://eureka-01:8761/eureka/,http://eureka-02:8762/eureka/
+```
+
+​		注意事项:
+
+* 配置hosts文件
+
+```shell
+127.0.0.1 eureka-01 eureka-02 eureka-03
+```
+
+* 在配置文件中添加eureka.instance.hostname选项
+* 在defaultZone中使用hostname名称
+* 在配置文件中设置eureka.client.register-with-eureka为false（表示不向注册中心注册自己）
+* eureka.client.fetch-registry为false(false表示自己端就是注册中心，我的职责就是维护服务实例，并不需要去检索服务)
+
 ## Eureka核心要素
 
 > 服务注册中心
