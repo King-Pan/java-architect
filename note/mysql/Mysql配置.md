@@ -72,7 +72,7 @@ default-character-set=utf8
 > 重启mysql
 
 ```shell
-service mysqld restart
+service mysqld restartser
 ```
 
 > 查看默认密码
@@ -118,4 +118,10 @@ grant all on *.* to 'ebuy' identified by 'Ebuy^&2019'  with grant option;
 
 
 ```
+
+
+
+## 事务隔离级别
+
+transaction_isolation=REPEATABLE-READ
 
