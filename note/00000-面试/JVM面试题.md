@@ -311,3 +311,28 @@ jvm中提供的年轻代回收算法Serial、ParNew、Parallel Scavenge都是复
 1. 吞吐率
 2. 最小执行时间
 
+
+
+
+
+java.lang.System.gc()只是java.lang.Runtime.getRuntime().gc()的简写，两者的行为没有任何不同。
+
+
+
+Sytem.gc()只是通知JVM做Full GC操作，具体执行看JVM行为。
+
+
+
+如果jvm启动参数配置了-XX:-+DisableExplicitGC，那么System.gc()就会是一个空函数调用。
+
+Runtime.gc()是一个native方法，最终实现在jvm.cpp中，如下所示：
+
+```c
+JVM_ENTRY_NO_ENV(void, JVM_GC(void))
+ JVMWrapper("JVM_GC");
+  if (!DisableExplicitGC) {
+   Universe::heap()->collect(GCCause::_java_lang_system_gc);
+  }
+JVM_END
+```
+
