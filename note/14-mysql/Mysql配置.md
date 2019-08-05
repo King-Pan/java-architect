@@ -119,3 +119,5 @@ grant all on *.* to 'ebuy' identified by 'Ebuy^&2019'  with grant option;
 
 ```
 
+[mysql 5.7.22 windows 64bit 安装教程](https://jingyan.baidu.com/article/14bd256e8c89aebb6d2612b9.html)
+
