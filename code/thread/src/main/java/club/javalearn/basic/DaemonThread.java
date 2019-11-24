@@ -11,7 +11,7 @@ package club.javalearn.basic;
 public class DaemonThread {
     private static class UseThread extends Thread{
         @Override
-        public void run() {
+        public  void run() {
             try {
                 while (!isInterrupted()){
                     System.out.println("run ......");

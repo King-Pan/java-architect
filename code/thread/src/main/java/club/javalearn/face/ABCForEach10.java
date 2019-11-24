@@ -1,5 +1,6 @@
 package club.javalearn.face;
 
+import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
@@ -18,7 +19,7 @@ class ShareResource {
     /**
      * A=1,B=2,C=3
      */
-    private int number = 1;
+    private volatile AtomicInteger number = new AtomicInteger(1);
     private Lock lock = new ReentrantLock();
     private Condition a1 = lock.newCondition();
     private Condition b2 = lock.newCondition();
@@ -27,11 +28,11 @@ class ShareResource {
     public void print5() {
         lock.lock();
         try {
-            while (this.number != 1) {
+            while (this.number.get() % 3 != 1) {
                 a1.await();
             }
             print(5);
-            number++;
+            number.incrementAndGet();
             b2.signalAll();
         } catch (Exception e) {
             e.printStackTrace();
@@ -43,11 +44,11 @@ class ShareResource {
     public void print10() {
         lock.lock();
         try {
-            while (this.number != 2) {
+            while (this.number.get() % 3 != 2) {
                 b2.await();
             }
             print(10);
-            number=3;
+            number.incrementAndGet();
             c3.signalAll();
         } catch (Exception e) {
             e.printStackTrace();
@@ -59,11 +60,11 @@ class ShareResource {
     public void print15() {
         lock.lock();
         try {
-            while (this.number != 3) {
+            while (this.number.get() % 3 != 0) {
                 c3.await();
             }
             print(15);
-            number=1;
+            number.incrementAndGet();
             a1.signalAll();
         } catch (Exception e) {
             e.printStackTrace();
