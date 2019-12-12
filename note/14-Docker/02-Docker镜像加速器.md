@@ -62,3 +62,22 @@ $ ps -ef|grep docker
 ## 1.2 网易云加速器
 
 ​	原理同阿里云，只需要把阿里云的网络加速器地址改为网易云加速器地址即可。
+
+
+
+Windows下使用docker 下载镜像时 报错：
+
+no matching manifest for windows/amd64 10.0.18362 in the manifest list entries
+解决方案：设置daemon.json的experimental:true
+
+
+
+```json
+{
+  "registry-mirrors": ["https://iht4xsyj.mirror.aliyuncs.com"],
+    "insecure-registries":[],
+    "debug":true,
+    "experimental":true
+}
+```
+
