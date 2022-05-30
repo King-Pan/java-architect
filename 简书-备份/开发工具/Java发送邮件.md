@@ -368,11 +368,7 @@ POP3/SMTP服务 ([如何使用 Foxmail 等软件收发邮件？](http://service
 		SendMail mail = SendMail.init2();
 		mail.setRecipient("zhuzy@asiainfo.com");
 		List<String> ccList = new ArrayList<>();
-		ccList.add("dongyong@asiainfo.com");
-		ccList.add("fupc@asiainfo.com");
-		ccList.add("wanghang@asiainfo.com");
-		ccList.add("lizj5@asiainfo.com");
-		ccList.add("wangzj7@asiainfo.com");
+		ccList.add("467449165@qq.com");
 		mail.setCC(ccList);
 		mail.setSubject("前台组周报");
 		mail.setDate(new Date());
