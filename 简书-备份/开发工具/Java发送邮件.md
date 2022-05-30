@@ -366,7 +366,7 @@ POP3/SMTP服务 ([如何使用 Foxmail 等软件收发邮件？](http://service
 		String savePath = worktimeService.getFilePath(1);
 		logger.info("发送周报的保存位置： " + savePath);
 		SendMail mail = SendMail.init2();
-		mail.setRecipient("zhuzy@asiainfo.com");
+		mail.setRecipient("zhuzy@qq.com");
 		List<String> ccList = new ArrayList<>();
 		ccList.add("467449165@qq.com");
 		mail.setCC(ccList);
@@ -389,7 +389,7 @@ POP3/SMTP服务 ([如何使用 Foxmail 等软件收发邮件？](http://service
 		String savePath = worktimeService.getFilePath(2);
 		logger.info("发送月报的保存位置： " + savePath);
 		SendMail mail = SendMail.init();
-		mail.setRecipient("lizj5@asiainfo.com");
+		mail.setRecipient("lizj5@qq.com");
 		List<String> ccList = new ArrayList<>();
 		mail.setCC(ccList);
 		mail.setSubject("前台组月报");
